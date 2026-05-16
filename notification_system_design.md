@@ -61,10 +61,14 @@ for Better Performance:
 ## Stage 5
 Problem:
 - bulk notification is slow
+- stops flow
 
 Solution:
 - use queue (RabbitMQ/Kafka)
 - retry failed jobs
+
+Flow : 
+enqueue -> worker -> send email -> save DB -> push notificaiton
 
 ---
 
@@ -75,3 +79,13 @@ Placement > Result > Event
 Sort by:
 - priority
 - latest time
+use min-heap for efficiently get top notification
+
+---
+
+## Stage 7
+Build React front end using Material UI:
+2 pages :
+- All notification
+- Priority notification with filter : event, result, placement and limits( top 10, top15, top 20)
+
